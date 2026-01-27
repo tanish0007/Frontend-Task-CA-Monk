@@ -117,6 +117,23 @@
       "date": "2025-12-10T16:30:00.000Z",
       "coverImage": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
       "content": "Ethics form the backbone of trust in financial systems. With increased automation and complex instruments, ethical judgment plays a crucial role in decision-making. Short-term gains achieved through unethical practices often lead to long-term damage.\n\nProfessionals must prioritize transparency, integrity, and accountability. Strong ethical frameworks protect not only clients but also the credibility of the profession.\n\nIn an era of rapid change, ethics remain a constant guiding principle."
+    },
+    {
+      "id": "1769546986645",
+      "title": "Testing Blog",
+      "category": [
+        "TEST",
+        "TESTING"
+      ],
+      "description": "This is just for testing. Just to check if POST request works well or not and to see the user interface after adding this also.",
+      "coverImage": "https://images.pexels.com/photos/5212327/pexels-photo-5212327.jpeg",
+      "content": "Clearing CA finals on the first attempt requires more than hard work—it demands smart planning and mental discipline. The syllabus is vast, and without a structured approach, students often feel overwhelmed. A realistic timetable that balances study, revision, and rest is the foundation of effective preparation.\\n\\nConceptual clarity should always take priority over rote learning. Instead of memorizing provisions, focus on understanding their practical application. Regular mock tests help identify weak areas and improve time management under exam conditions. Equally important is revision; multiple short revisions are far more effective than a single exhaustive one.\\n\\nMental and physical health often get ignored during preparation. Poor sleep, lack of exercise, and constant stress can reduce productivity significantly. Short breaks, light workouts, and mindful breathing help maintain focus and prevent burnout. Remember, consistency beats intensity. Studying six focused hours daily for months is better than sporadic twelve-hour sessions.\\n\\nFinally, avoid comparison. Every student has a different pace. Trust your preparation, stay disciplined, and focus on progress rather than perfection.",
+      "author": {
+        "name": "Tanish Jangra",
+        "role": "Frontend Developer at CA Monk",
+        "image": "https://portfolio-sooty-tau-51.vercel.app/developer.jpg"
+      },
+      "date": "2026-01-27T20:49:46.645Z"
     }
   ]
 }
