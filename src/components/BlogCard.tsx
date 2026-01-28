@@ -3,7 +3,7 @@ import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import type { Blog } from '../types/blog';
 import { formatDistanceToNow } from '../utils/dateUtils';
-import { DollarSign, Briefcase, BookOpen, Code, Scale, Users, TrendingUp, Heart } from 'lucide-react';
+import { DollarSign, Briefcase, BookOpen, Code, Scale, TrendingUp, Heart } from 'lucide-react';
 
 interface BlogCardProps {
   blog: Blog;
