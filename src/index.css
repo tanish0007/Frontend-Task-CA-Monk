@@ -57,3 +57,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom Scrollbar Styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgb(243, 244, 246); /* Light gray for light mode */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(156, 163, 175); /* Medium gray for light mode */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgb(107, 114, 128); /* Darker gray on hover */
+}
+
+/* Dark mode scrollbar */
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: rgb(31, 41, 55); /* Dark gray for dark mode */
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(75, 85, 99); /* Medium gray for dark mode */
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgb(107, 114, 128); /* Lighter gray on hover in dark mode */
+}
+
+/* Firefox scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(156, 163, 175) rgb(243, 244, 246);
+}
+
+.dark .custom-scrollbar {
+  scrollbar-color: rgb(75, 85, 99) rgb(31, 41, 55);
+}

@@ -37,6 +37,7 @@ const BlogForm: React.FC = () => {
         authorImage: '',
       });
       alert('Blog created successfully!');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     },
     onError: (error) => {
       alert('Failed to create blog: ' + error.message);
@@ -72,15 +73,15 @@ const BlogForm: React.FC = () => {
   };
 
   return (
-    <Card className="max-w-4xl mx-auto my-12">
+    <Card className="max-w-4xl mx-auto my-12 dark:bg-gray-900 dark:border-gray-800">
       <CardHeader>
-        <CardTitle className="text-2xl">Create New Blog Post</CardTitle>
+        <CardTitle className="text-2xl dark:text-white">Create New Blog Post</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <Label htmlFor="title">Blog Title *</Label>
+              <Label htmlFor="title" className="dark:text-gray-200">Blog Title *</Label>
               <Input
                 id="title"
                 name="title"
@@ -88,11 +89,12 @@ const BlogForm: React.FC = () => {
                 onChange={handleChange}
                 placeholder="Enter blog title"
                 required
+                className="dark:bg-gray-800 dark:border-gray-700 dark:text-white"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="category">Categories * (comma separated)</Label>
+              <Label htmlFor="category" className="dark:text-gray-200">Categories * (comma separated)</Label>
               <Input
                 id="category"
                 name="category"
@@ -100,12 +102,13 @@ const BlogForm: React.FC = () => {
                 onChange={handleChange}
                 placeholder="e.g., FINANCE, TECH"
                 required
+                className="dark:bg-gray-800 dark:border-gray-700 dark:text-white"
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="description">Short Description *</Label>
+            <Label htmlFor="description" className="dark:text-gray-200">Short Description *</Label>
             <Textarea
               id="description"
               name="description"
@@ -114,11 +117,12 @@ const BlogForm: React.FC = () => {
               placeholder="Brief summary of your blog"
               rows={3}
               required
+              className="dark:bg-gray-800 dark:border-gray-700 dark:text-white"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="coverImage">Cover Image URL *</Label>
+            <Label htmlFor="coverImage" className="dark:text-gray-200">Cover Image URL *</Label>
             <Input
               id="coverImage"
               name="coverImage"
@@ -127,11 +131,12 @@ const BlogForm: React.FC = () => {
               placeholder="https://example.com/image.jpg"
               type="url"
               required
+              className="dark:bg-gray-800 dark:border-gray-700 dark:text-white"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="content">Blog Content *</Label>
+            <Label htmlFor="content" className="dark:text-gray-200">Blog Content *</Label>
             <Textarea
               id="content"
               name="content"
@@ -140,14 +145,15 @@ const BlogForm: React.FC = () => {
               placeholder="Write your full blog content here..."
               rows={10}
               required
+              className="dark:bg-gray-800 dark:border-gray-700 dark:text-white"
             />
           </div>
 
-          <div className="border-t pt-6">
-            <h3 className="text-lg font-semibold mb-4">Author Information</h3>
+          <div className="border-t dark:border-gray-800 pt-6">
+            <h3 className="text-lg font-semibold mb-4 dark:text-white">Author Information</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="space-y-2">
-                <Label htmlFor="authorName">Full Name *</Label>
+                <Label htmlFor="authorName" className="dark:text-gray-200">Full Name *</Label>
                 <Input
                   id="authorName"
                   name="authorName"
@@ -155,11 +161,12 @@ const BlogForm: React.FC = () => {
                   onChange={handleChange}
                   placeholder="John Doe"
                   required
+                  className="dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="authorRole">Role *</Label>
+                <Label htmlFor="authorRole" className="dark:text-gray-200">Role *</Label>
                 <Input
                   id="authorRole"
                   name="authorRole"
@@ -167,11 +174,12 @@ const BlogForm: React.FC = () => {
                   onChange={handleChange}
                   placeholder="Senior Financial Analyst"
                   required
+                  className="dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="authorImage">Profile Image URL *</Label>
+                <Label htmlFor="authorImage" className="dark:text-gray-200">Profile Image URL *</Label>
                 <Input
                   id="authorImage"
                   name="authorImage"
@@ -180,6 +188,7 @@ const BlogForm: React.FC = () => {
                   placeholder="https://example.com/avatar.jpg"
                   type="url"
                   required
+                  className="dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                 />
               </div>
             </div>
@@ -187,7 +196,7 @@ const BlogForm: React.FC = () => {
 
           <Button 
             type="submit" 
-            className="w-full"
+            className="w-full bg-primary hover:bg-primary/90"
             disabled={createBlogMutation.isPending}
           >
             {createBlogMutation.isPending ? 'Creating...' : 'Create Blog Post'}

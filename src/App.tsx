@@ -7,6 +7,8 @@ import BlogDetail from './components/BlogDetail';
 import BlogForm from './components/BlogForm';
 import { BlogCardSkeleton, BlogDetailSkeleton } from './components/BlogSkeleton';
 import { blogService } from './services/blogService';
+import { Button } from './components/ui/button';
+import { PenSquare } from 'lucide-react';
 
 const queryClient = new QueryClient();
 
@@ -30,24 +32,38 @@ const BlogApp: React.FC = () => {
     }
   }, [blogs, selectedBlogId]);
 
+  const scrollToForm = () => {
+    const formElement = document.getElementById('blog-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950">
       <Navbar />
       
-      <header className="bg-white py-12 border-b">
+      <header className="bg-white dark:bg-gray-900 py-12 border-b dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-3">CA Monk Blog</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold mb-3 dark:text-white">CA Monk Blog</h1>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">
             Stay updated with the latest trends in finance, accounting, and career growth
           </p>
+          <Button 
+            onClick={scrollToForm}
+            className="gap-2 bg-primary hover:bg-primary/90"
+          >
+            <PenSquare className="w-4 h-4" />
+            Write a Blog
+          </Button>
         </div>
       </header>
 
       <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-1">
-            <h2 className="text-xl font-bold mb-4">Latest Articles</h2>
-            <div className="space-y-3 max-h-[800px] overflow-y-auto pr-2">
+            <h2 className="text-xl font-bold mb-4 dark:text-white">Latest Articles</h2>
+            <div className="space-y-3 max-h-[800px] overflow-y-auto pr-2 custom-scrollbar">
               {blogsLoading ? (
                 <>
                   <BlogCardSkeleton />
@@ -80,7 +96,9 @@ const BlogApp: React.FC = () => {
           </div>
         </div>
 
-        <BlogForm />
+        <div id="blog-form">
+          <BlogForm />
+        </div>
       </main>
 
       <Footer />
