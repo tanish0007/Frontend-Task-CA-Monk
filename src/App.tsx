@@ -8,7 +8,7 @@ import BlogForm from './components/BlogForm';
 import { BlogCardSkeleton, BlogDetailSkeleton } from './components/BlogSkeleton';
 import { blogService } from './services/blogService';
 import { Button } from './components/ui/button';
-import { PenSquare } from 'lucide-react';
+// import { PenSquare } from 'lucide-react';
 
 const queryClient = new QueryClient();
 
@@ -53,7 +53,7 @@ const BlogApp: React.FC = () => {
             onClick={scrollToForm}
             className="gap-2 bg-primary hover:bg-primary/90"
           >
-            <PenSquare className="w-4 h-4" />
+            {/* <PenSquare className="w-4 h-4" /> */}
             Write a Blog
           </Button>
         </div>
